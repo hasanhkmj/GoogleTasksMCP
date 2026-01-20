@@ -8,12 +8,12 @@ WORKDIR /app
 ENV UV_COMPILE_BYTECODE=1
 
 # Copy dependency files
-COPY pyproject.toml .
+COPY pyproject.toml uv.lock .python-version ./
 
 # Install dependencies
 # --frozen: strict version matching using lockfile (if we had one, but we'll use install for now as it's fresh)
 # --no-dev: do not install dev dependencies
-RUN uv pip install --system -r <(uv pip compile pyproject.toml)
+RUN uv sync --frozen --no-dev --no-install-project
 
 # Copy source code
 COPY . .
@@ -22,4 +22,4 @@ COPY . .
 EXPOSE 3333
 
 # Run the server
-CMD ["python", "-m", "src.server"]
+CMD ["uv", "run", "python", "-m", "src.server"]
