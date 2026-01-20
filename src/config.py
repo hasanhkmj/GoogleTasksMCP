@@ -12,4 +12,4 @@ class Config:
     # Server Auth
     MCP_SERVER_TOKEN = os.getenv("MCP_SERVER_TOKEN", "google-tasks-token")
     PORT = int(os.getenv("PORT", "3333"))
-    HOST = os.getenv("HOST", "0.0.0.0") # Bind to all interfaces for Docker
+    HOST = os.getenv("HOST", "127.0.0.1") # Bind to all interfaces for Docker
