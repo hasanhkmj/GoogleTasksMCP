@@ -1,0 +1,16 @@
+[project]
+name = "google-tasks-mcp"
+version = "0.1.0"
+description = "MCP Server for Google Tasks"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastmcp>=2.14.3",
+    "google-api-python-client>=2.111.0",
+    "google-auth-oauthlib>=1.2.0",
+    "google-auth-httplib2>=0.2.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.scripts]
+google-tasks-mcp = "src.server:main"
