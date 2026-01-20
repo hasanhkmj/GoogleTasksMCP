@@ -1,7 +1,6 @@
 # Google Tasks MCP Server (Python)
 
 A Model Context Protocol (MCP) server for Google Tasks, written in Python and running with FastMCP.
-Mirrors the functionality of [google-tasks-mcp-js](https://github.com/modelcontextprotocol/servers/tree/main/src/google-tasks).
 
 ## Features
 - Manage Task Lists
@@ -36,7 +35,7 @@ Mirrors the functionality of [google-tasks-mcp-js](https://github.com/modelconte
 
 1. Build:
    ```bash
-   docker build -t google-tasks-mcp .
+   docker build -t GoogleTasksMCP .
    ```
 
 2. Run (Env Vars):
@@ -45,7 +44,7 @@ Mirrors the functionality of [google-tasks-mcp-js](https://github.com/modelconte
      -e GOOGLE_CLIENT_ID=... \
      -e GOOGLE_CLIENT_SECRET=... \
      -e GOOGLE_REFRESH_TOKEN=... \
-     google-tasks-mcp
+     GoogleTasksMCP
    ```
 
 3. Run (Binder Mount for Token):
@@ -54,7 +53,7 @@ Mirrors the functionality of [google-tasks-mcp-js](https://github.com/modelconte
    docker run -p 3333:3333 \
      -v $(pwd)/credentials.json:/app/credentials.json \
      -v $(pwd)/token.json:/app/token.json \
-     google-tasks-mcp
+     GoogleTasksMCP
    ```
 
 ## Tools available
